@@ -15,8 +15,19 @@ The exact upstream commit each copy matches is in `plugins/<name>/upstream.json`
 
 ## Using it
 
-**On your computer** (once per machine; the repo is private, so git must be
-able to reach it, e.g. via `gh auth login`):
+**In Claude Code cloud sessions:** the cloud environment's setup script
+installs everything at the start of each new session:
+
+```bash
+claude plugin marketplace add hrnarf/skills || true
+for p in superpowers frontend-design obsidian eli5; do claude plugin install "$p@hrnarf" || true; done
+```
+
+When you add a plugin here, add its name to that loop in each environment's
+setup script (Settings → cloud environment → Edit).
+
+**On your computer** (once per machine, in the Claude Code terminal, desktop
+Code tab or IDE; `/plugin` isn't available in app chats):
 
 ```
 /plugin marketplace add hrnarf/skills
