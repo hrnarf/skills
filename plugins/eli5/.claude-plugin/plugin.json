@@ -1,0 +1,17 @@
+{
+  "name": "eli5",
+  "description": "Explain any topic, code or error at the right level for a specific audience: a child, a manager, an engineer, your parents.",
+  "author": {
+    "name": "DreambigOu",
+    "url": "https://github.com/dreambigou"
+  },
+  "homepage": "https://github.com/dreambigou/eli5",
+  "repository": "https://github.com/dreambigou/eli5",
+  "license": "MIT",
+  "keywords": [
+    "explain",
+    "eli5",
+    "audience"
+  ],
+  "version": "2026.11.12"
+}

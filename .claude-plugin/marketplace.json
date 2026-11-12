@@ -1,0 +1,32 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "hrnarf",
+  "description": "Skills and plugins I use with Claude Code, copied from their sources and checked weekly for upstream updates.",
+  "owner": { "name": "hrnarf" },
+  "plugins": [
+    {
+      "name": "superpowers",
+      "source": "./plugins/superpowers",
+      "description": "Brainstorm, plan, test first, build with subagents, debug from the root cause, verify before calling it done. By Jesse Vincent (obra/superpowers).",
+      "category": "development"
+    },
+    {
+      "name": "frontend-design",
+      "source": "./plugins/frontend-design",
+      "description": "Distinctive, production-grade frontend design that avoids generic AI aesthetics. By Anthropic.",
+      "category": "development"
+    },
+    {
+      "name": "obsidian",
+      "source": "./plugins/obsidian",
+      "description": "Work with Obsidian vaults: Obsidian Markdown, Bases, JSON Canvas, the Obsidian CLI, Headless sync, Defuddle and Knap. By Obsidian (obsidianmd/obsidian-skills).",
+      "category": "productivity"
+    },
+    {
+      "name": "eli5",
+      "source": "./plugins/eli5",
+      "description": "Explain anything at the right level for a specific audience. By DreambigOu (dreambigou/eli5).",
+      "category": "productivity"
+    }
+  ]
+}

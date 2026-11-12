@@ -1,0 +1,12 @@
+{
+  "repo": "anthropics/claude-plugins-official",
+  "branch": "main",
+  "path": "plugins/frontend-design",
+  "include": [
+    ".claude-plugin/plugin.json",
+    "skills",
+    "LICENSE",
+    "README.md"
+  ],
+  "commit": "e0ab6e51219eef74e417a0e1d89e5d53e5e763d4"
+}

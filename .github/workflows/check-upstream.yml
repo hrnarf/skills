@@ -1,0 +1,52 @@
+name: Check upstream skills
+
+# Once a week, compare every copied plugin with its source repository.
+# For each one that changed, open (or refresh) a pull request with the diff.
+# Nothing is merged automatically.
+
+on:
+  schedule:
+    - cron: "17 9 * * 1" # Mondays 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    outputs:
+      plugins: ${{ steps.ls.outputs.plugins }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: ls
+        run: |
+          plugins=$(for f in plugins/*/upstream.json; do basename "$(dirname "$f")"; done | jq -R . | jq -sc .)
+          echo "plugins=$plugins" >> "$GITHUB_OUTPUT"
+
+  check:
+    needs: list
+    if: needs.list.outputs.plugins != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        plugin: ${{ fromJson(needs.list.outputs.plugins) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: sync
+        env:
+          PLUGIN: ${{ matrix.plugin }}
+        run: python3 scripts/sync_upstream.py "plugins/$PLUGIN" --body-file "$RUNNER_TEMP/pr-body.md"
+
+      - if: steps.sync.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: upstream/${{ matrix.plugin }}
+          delete-branch: true
+          add-paths: plugins/${{ matrix.plugin }}
+          commit-message: "Update ${{ matrix.plugin }} from upstream (${{ steps.sync.outputs.short }})"
+          title: "Update ${{ matrix.plugin }} from upstream (${{ steps.sync.outputs.short }})"
+          body-path: ${{ runner.temp }}/pr-body.md

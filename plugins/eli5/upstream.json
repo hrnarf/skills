@@ -1,0 +1,10 @@
+{
+  "repo": "dreambigou/eli5",
+  "branch": "main",
+  "path": "",
+  "include": [
+    "skills/eli5",
+    "LICENSE"
+  ],
+  "commit": "a766623b062331fdde53467001379b4ddf3acc2f"
+}

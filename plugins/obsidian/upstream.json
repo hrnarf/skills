@@ -1,0 +1,13 @@
+{
+  "repo": "obsidianmd/obsidian-skills",
+  "branch": "main",
+  "path": "plugins/obsidian",
+  "include": [
+    ".claude-plugin/plugin.json",
+    "assets",
+    "skills",
+    "LICENSE",
+    "README.md"
+  ],
+  "commit": "398127736bd4ba42d767b1419fee1a927508370b"
+}
