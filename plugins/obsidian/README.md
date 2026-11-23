@@ -10,9 +10,11 @@ In Claude Code:
 /plugin install obsidian --marketplace obsidianmd/obsidian-skills
 ```
 
-In Codex, run `codex plugin marketplace add obsidianmd/obsidian-skills`, then install Obsidian from the plugin directory.
+In ChatGPT or Codex, install [Obsidian from the plugin directory](https://chatgpt.com/plugins/plugins_6aee4fde227881919d61b034b1c31096).
 
-In Cursor, install Obsidian from the [Cursor Marketplace](https://cursor.com/marketplace).
+In Cursor, install [Obsidian from the Cursor Marketplace](https://cursor.com/marketplace/obsidian).
+
+In Grok Bot, add [Obsidian for Grok Bot](https://x.ai/bot/plugin/88871845).
 
 ## Requirements
 
